@@ -8,7 +8,7 @@ CREATE TABLE `Drivers` (
   `id` int(11) PRIMARY KEY AUTO_INCREMENT, 
   `num` int(11) NOT NULL, 
   `country` text NOT NULL, 
-  `name` text NOT NULL
+  `name` text NOT NULL,
   FOREIGN KEY (id) REFERENCES Driver_team(driver_id)
   );
 
@@ -19,7 +19,7 @@ CREATE TABLE `Teams` (
   `teamcountry` text NOT NULL,           
   `constructor` text NOT NULL,    
   `chassis` text NOT NULL,
-  `powerunit` text NOT NULL
+  `powerunit` text NOT NULL,
   FOREIGN KEY (id) REFERENCES Driver_team(team_id)
 );
 
