@@ -8,8 +8,7 @@ CREATE TABLE `Drivers` (
   `id` int(11) PRIMARY KEY AUTO_INCREMENT, 
   `num` int(11) NOT NULL, 
   `country` text NOT NULL, 
-  `name` text NOT NULL,
-  FOREIGN KEY (id) REFERENCES Driver_team(driver_id)
+  `name` text NOT NULL
   );
 
 CREATE TABLE `Teams` (     
@@ -19,14 +18,15 @@ CREATE TABLE `Teams` (
   `teamcountry` text NOT NULL,           
   `constructor` text NOT NULL,    
   `chassis` text NOT NULL,
-  `powerunit` text NOT NULL,
-  FOREIGN KEY (id) REFERENCES Driver_team(team_id)
+  `powerunit` text NOT NULL
 );
 
 CREATE TABLE `Driver_team` (     
   `id` int(11) PRIMARY KEY AUTO_INCREMENT,
   `driver_id` int(11) NOT NULL, 
-  `team_id` int(11) NOT NULL
+  `team_id` int(11) NOT NULL,
+    FOREIGN KEY (`driver_id`) REFERENCES `Drivers`(`id`),
+    FOREIGN KEY (`team_id`) REFERENCES `Teams`(`id`)
 );
 
 INSERT INTO Drivers(`num`, `country`, `name`) VALUES('10',	'France',	 'Pierre Gasly');  
