@@ -1,36 +1,31 @@
-# Les13
-Homework for lesson13
+# Homework for lesson13
+# Создание базы данных гонщиков Formula 1 2024 года
 
-CREATE DATABASE f1db;
-CREATE USER 'vagrant'@'localhost' IDENTIFIED BY 'vagrant';
-CREATE USER 'admin'@'192.168.%' IDENTIFIED BY 'admin';
-FLUSH PRIVILEGES;
-GRANT ALL PRIVILEGES ON * . * TO 'vagrant'@'localhost';
+## 1) Скрипт создания базы f1db - F1_database.sql
 
-CREATE TABLE `Drivers` (
-  `id` int(11) PRIMARY KEY AUTO_INCREMENT, 
-  `num` int(11) NOT NULL, 
-  `country` text NOT NULL, 
-  `name` text NOT NULL.
-    FOREIGN KEY (id) REFERENCES Driver_team(driver_id)
-  );
+## 2) Создана таблица Drivers с полями:
+###    - id (первинний ключ, автоінкремент)
+###    - num (номер гонщика)
+###    - country (страна рождения )
+###    - name (Имя и фамилия)
 
-CREATE TABLE `Teams` (     
-  `id` int(11) PRIMARY KEY AUTO_INCREMENT,
-  `teamname` text NOT NULL,    
-  `teamfullname` text NOT NULL,    
-  `teamcountry` text NOT NULL,           
-  `constructor` text NOT NULL,    
-  `chassis` text NOT NULL,
-  `powerunit` text NOT NULL.
-    FOREIGN KEY (id) REFERENCES Driver_team(team_id)
-);
+## 3) Создана таблица Teams с полями:
+###    - id (первинний ключ, автоінкремент)
+###    - teamname (имя команды)
+###    - teamfullname (полное имя команды)
+###    - teamcountry (краiна команди)
+###    - constructor (конструктор)
+###    - chassis (шаси)
+###    - powerunit (двигун)
 
-CREATE TABLE `Driver_team` (     
-  `id` int(11) PRIMARY KEY AUTO_INCREMENT,
-  `driver_id` int(11) NOT NULL, 
-  `team_id` int(11) NOT NULL
-);
+## 4) Создана таблица Driver_team с полями:
+###    - id (первинний ключ, автоінкремент)
+###    - team_id (id гонщика)
+###    - driver_id (id команды)
+
+![Pic](tables.png)
+
+
 
 
 
