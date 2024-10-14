@@ -65,11 +65,15 @@ INSERT INTO Driver_team(`driver_id`, `team_id`) VALUES(23, 10);
 ## 8) Створено  бекап бази f1db
 sudo mysqldump f1db > f1db_dump.sql
 
-удалил базу
+### удалил базу
+
 drop database f1db;
 
-востановнено бази f1db
+### востановнено базу f1db
 ![Pic](restore.png)
+
+Перевирено повноту востановлення
+![Pic](restore_Drivers.png)
 
 
 
