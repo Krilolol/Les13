@@ -1,7 +1,8 @@
 CREATE DATABASE f1db;
+CREATE USER 'vagrant'@'192.168.%' IDENTIFIED BY 'vagrant';
 CREATE USER 'vagrant'@'localhost' IDENTIFIED BY 'vagrant';
-CREATE USER 'admin'@'192.168.%' IDENTIFIED BY 'admin';
 FLUSH PRIVILEGES;
+GRANT ALL PRIVILEGES ON * . * TO 'vagrant'@'192.168.%';
 GRANT ALL PRIVILEGES ON * . * TO 'vagrant'@'localhost';
 
 CREATE TABLE `Drivers` (
