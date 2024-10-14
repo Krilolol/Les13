@@ -72,7 +72,8 @@ drop database f1db;
 ### востановнено базу f1db
 ![Pic](restore.png)
 
-Перевирено повноту востановлення
+### Перевірено повноту востановлення
+
 ![Pic](restore_Drivers.png)
 
 
